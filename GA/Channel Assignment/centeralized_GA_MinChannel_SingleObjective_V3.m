@@ -1,48 +1,4 @@
-%    function Min_Number_of_Channel= centeralized_GA_MinChannel(AlgorithmParams,ProblemParams,ClusterParams)
 
-% clc;
-% clear;
-% close all
-% 
-% prompt = {'Enter number of nodes:','Enter the geographical length of network :', 'Enter the communication range  :' , 'Enter the interfence range   :','Enter the max available channel   :' ,'Enter the min available channel   :'};
-% dlg_title = 'Input for ad hoc network ';
-% num_lines = 1;
-% def = {'100','1000','250','500'};
-% answer = inputdlg(prompt,dlg_title,num_lines);
-% 
-% 
-% 
-% ProblemParams.NODE.Number =str2num(answer{1,1});
-% rand('state', 0);
-% figure(1);
-% clf;
-% hold on;
-% ProblemParams.NODE.GeographicalRange = str2num(answer{2,1});
-% ProblemParams.NODE.TrRange= str2num(answer{3,1}); % maximum range;
-% ProblemParams.NODE.InrRange=str2num(answer{4,1});
-% ProblemParams.MaxNumber_of_Channel=str2num(answer{5,1});
-% ProblemParams.MinNumber_of_Channel=str2num(answer{6,1})
-% ProblemParams.Distance=[];
-% Distance=[];
-%   [ProblemParams.Distance,ProblemParams.Adjacecy,ProblemParams.Point]=Creat_Ad_Hoc_Network(ProblemParams);
-%  
-% %%%%%%%%%%%%%%%%%%%%%%%%%%clustring%%%%%%%%%%%%
-%  ClusterParams=Cluster_5_Ad_Hoc_Network(ProblemParams);
-% 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  ProblemParams   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ProblemParams.Chromosom_Start_Index_for_clustring=[];
-% ProblemParams.Chromosom_End_Index_for_clustring=[];
-% ProblemParams.Number_of_Channel=randint(1,1,[5 ProblemParams.MaxNumber_of_Channel]);
-% ProblemParams.Number_of_Channel=0;
-% ProblemParams.Assined_Channel=cell(ClusterParams.Number_of_Cluster,1);
-% ProblemParams.Cluster_Avaiable_Channel=[];
-% ProblemParams.InrRange=ProblemParams.NODE.InrRange;
-% 
-% ProblemParams.Path_Loss_Exponents=2;
-% ProblemParams.NPar = ProblemParams.NODE.Number*(ProblemParams.NODE.Number-1)/2; % Number of optimization variables of your objective function. "NPar" is the dimention of the optimization problem.
-% ProblemParams.VarMin = 1;                        %we consider the number of channel % Lower limit of the optimization parameters. You can state the limit in two ways. 1)   2)
-% ProblemParams.VarMax = 20;  
 
 % Lower limit of the optimization parameters. You can state the limit in two ways. 1)   2)
 global ClusterParams;
@@ -98,10 +54,7 @@ MeanCostM(1) = mean(COSTFUNCTION_for_MinChannel);
  %% %%%%%%%%%%%%%%%%%%%%% MAIN LOOP (Evolution) %%%%%%%%%%%%%%%%%%%%%%%%
 for kkk=1:AlgorithmParams.MaxGeneration
 % 
-
-
-    
-          
+ 
 
 if mod(kkk,10)==0 
     
